@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Interaction Recorder",
+  "version": "1.0",
+  "description": "Records user interactions and saves them to the default Downloads folder.",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "downloads",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
